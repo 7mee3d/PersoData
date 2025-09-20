@@ -46,9 +46,24 @@ namespace Simple_Project___Person_Data_Desktop
 
         private void btnShowAll_Click(object sender, EventArgs e)
         {
+
+            int xWidth = (Screen.PrimaryScreen.Bounds.Width - this.Width) / 2;
+            int yHeight = (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2;
+
+      
+
+
             Form frmShowAll = new Form();
             TextBox txtShowAll = new TextBox();
+            frmShowAll.Text = "Information All Persons";
+            frmShowAll.Icon = Icon.ExtractAssociatedIcon("C:\\Users\\PC\\Desktop\\Files Icons and Images\\open-book_16682324.ico");
+            frmShowAll.MinimizeBox = false; 
+            frmShowAll.MaximizeBox = false;
+            frmShowAll.Size = new Size(1276, 877);
+            frmShowAll.Location = new Point(xWidth, yHeight); 
 
+
+            txtShowAll.Font = new Font("Modern No. 20", 35f, FontStyle.Bold);
             frmShowAll.Location = this.Location;
             frmShowAll.Size = this.Size;
             frmShowAll.StartPosition = FormStartPosition.CenterScreen;
@@ -238,8 +253,18 @@ namespace Simple_Project___Person_Data_Desktop
 
         private void btnShowAllImagePerso_Click(object sender, EventArgs e)
         {
+            int xWidth = (Screen.PrimaryScreen.Bounds.Width - this.Width) / 2;
+            int yHeight = (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2;
 
             Form FrmNew = new Form();
+
+            FrmNew.Text = "Information & Images All Persons";
+            FrmNew.Icon = Icon.ExtractAssociatedIcon("C:\\Users\\PC\\Desktop\\Files Icons and Images\\open-book_16682324.ico");
+            FrmNew.MinimizeBox = false;
+            FrmNew.MaximizeBox = false;
+            FrmNew.Size = new Size(1276, 877);
+            FrmNew.Location = new Point(xWidth, yHeight);
+
             Label newLabelInformation = new Label();
             Label newLabelImage = new Label();
             newLabelInformation.Text = "Information";
