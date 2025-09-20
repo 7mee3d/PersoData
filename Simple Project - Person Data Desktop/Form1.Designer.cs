@@ -180,11 +180,13 @@
             // 
             // pictureBoxImage
             // 
+            pictureBoxImage.BackColor = Color.Transparent;
             pictureBoxImage.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBoxImage.Location = new Point(442, 345);
+            pictureBoxImage.Image = (Image)resources.GetObject("pictureBoxImage.Image");
+            pictureBoxImage.Location = new Point(439, 308);
             pictureBoxImage.Name = "pictureBoxImage";
-            pictureBoxImage.Size = new Size(236, 200);
-            pictureBoxImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxImage.Size = new Size(251, 248);
+            pictureBoxImage.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxImage.TabIndex = 8;
             pictureBoxImage.TabStop = false;
             // 

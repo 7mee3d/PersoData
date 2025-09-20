@@ -112,7 +112,10 @@ namespace Simple_Project___Person_Data_Desktop
             if (Exsits)
             {
                 MessageBox.Show("Person is Already Exsits,Try Add Agian ", "Note", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                pictureBoxImage.Image = Image.FromFile("C:\\Users\\PC\\Desktop\\Files Icons and Images\\NothingMan.jpg");
+
                 ResetTextBoxs();
+
             }
             else
             {
@@ -133,7 +136,7 @@ namespace Simple_Project___Person_Data_Desktop
                 SW.Close();
                 ResetTextBoxs();
 
-                pictureBoxImage.Image = new PictureBox().Image;
+                pictureBoxImage.Image = Image.FromFile("C:\\Users\\PC\\Desktop\\Files Icons and Images\\NothingMan.jpg");
 
             }
         }
@@ -164,18 +167,23 @@ namespace Simple_Project___Person_Data_Desktop
 
                         textBoxName.Text = Splits[1];
                         textBoxAddress.Text = Splits[2];
-
                         string pathImage = "img/" + textBoxID.Text + ".jpg";
-                        FileStream Filet = File.Open(pathImage, FileMode.Open);
-
-                        Bitmap BTM = new Bitmap(Filet);
-
-                        Filet.Close(); 
-
 
                         if (File.Exists(pathImage))
                         {
+                            FileStream Filet = File.Open(pathImage, FileMode.Open);
+
+                            Bitmap BTM = new Bitmap(Filet);
+
+                            Filet.Close();
+
                             pictureBoxImage.Image = BTM;
+
+                        }
+                        else
+                        {
+                            pictureBoxImage.Image = Image.FromFile("C:\\Users\\PC\\Desktop\\Files Icons and Images\\NothingMan.jpg");
+
                         }
                         isExsits = true;
 
@@ -191,12 +199,14 @@ namespace Simple_Project___Person_Data_Desktop
                     MessageBox.Show("This Person Not Found , Enter another ID Person to Cheak is Exsits or not ", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                     textBoxID.Focus();
                     textBoxID.SelectAll();
+                    pictureBoxImage.Image = Image.FromFile("C:\\Users\\PC\\Desktop\\Files Icons and Images\\NothingMan.jpg");
 
                 }
             }
             else
             {
                 MessageBox.Show("Please Enter the ID Person to Find", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                pictureBoxImage.Image = Image.FromFile("C:\\Users\\PC\\Desktop\\Files Icons and Images\\NothingMan.jpg");
 
             }
 
