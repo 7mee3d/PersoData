@@ -39,8 +39,8 @@ namespace Simple_Project___Person_Data_Desktop
 
             this.Location = new Point(xWidth, yHeight);
 
-            this.Size = new Size(1214, 854);
-           
+            this.Size = new Size(1276, 877);
+
 
         }
 
@@ -133,11 +133,11 @@ namespace Simple_Project___Person_Data_Desktop
                 pictureBoxImage.Image.Save("img/" + textBoxID.Text + ".jpg");
                 MessageBox.Show("Person Add Sccessfully", "Note", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 
-                SW.Close();
-                ResetTextBoxs();
+               
 
                 pictureBoxImage.Image = Image.FromFile("C:\\Users\\PC\\Desktop\\Files Icons and Images\\NothingMan.jpg");
-
+                SW.Close();
+                ResetTextBoxs();
             }
         }
 
@@ -171,13 +171,17 @@ namespace Simple_Project___Person_Data_Desktop
 
                         if (File.Exists(pathImage))
                         {
-                            FileStream Filet = File.Open(pathImage, FileMode.Open);
+
+
+                            pictureBoxImage.Image = Image.FromFile(pathImage);
+                            /*FileStream Filet = File.Open(pathImage, FileMode.Open);
 
                             Bitmap BTM = new Bitmap(Filet);
 
                             Filet.Close();
 
-                            pictureBoxImage.Image = BTM;
+                            pictureBoxImage.Image = BTM;*/
+
 
                         }
                         else
@@ -229,7 +233,91 @@ namespace Simple_Project___Person_Data_Desktop
         private void pictureBoxBack_Click(object sender, EventArgs e)
         {
             Application.OpenForms[0].Show();
-            this.Close(); 
+            this.Close();
+        }
+
+        private void btnShowAllImagePerso_Click(object sender, EventArgs e)
+        {
+
+            Form FrmNew = new Form();
+            Label newLabelInformation = new Label();
+            Label newLabelImage = new Label();
+            newLabelInformation.Text = "Information";
+            newLabelInformation.Top = 30;
+            newLabelInformation.Left = 100;
+            newLabelInformation.AutoSize = true;
+            newLabelInformation.Font = new Font("Modern No. 20", 25f, FontStyle.Bold);
+            newLabelInformation.ForeColor = Color.RoyalBlue;
+
+
+            newLabelImage.Text = "Image";
+            newLabelImage.Top = 30;
+            newLabelImage.Left = 750;
+            newLabelImage.AutoSize = true;
+            newLabelImage.Font = new Font("Modern No. 20", 25f, FontStyle.Bold);
+            newLabelImage.ForeColor = Color.RoyalBlue;
+
+
+            FrmNew.Location = new Point (101, 730 ) ;
+            FrmNew.Size = this.Size;
+            FrmNew.StartPosition = FormStartPosition.CenterScreen;
+            FrmNew.BackColor = Color.White; 
+
+            FrmNew.AutoScroll = true;
+
+            int TopControlsTxt =100;
+            string line = "";
+
+            StreamReader SR = new StreamReader("DataPerson.txt");
+
+            do
+            {
+                line = SR.ReadLine(); 
+
+                if (line !=null)
+                {
+
+                    string[] informationPersonOne = line.Split(";");
+                    TextBox txtBox = new TextBox();
+                    txtBox.Left = 10;
+                    txtBox.Top = TopControlsTxt;
+                    txtBox.Width =550;
+                    txtBox.Multiline = true; 
+                    txtBox.Height = 250;
+                    txtBox.Font = new Font("Modern No. 20", 20f, FontStyle.Bold);
+
+
+                    txtBox.Text = Environment.NewLine + Environment.NewLine  +  "ID Person : " + informationPersonOne[0].ToString() + Environment.NewLine + Environment.NewLine 
+                        + "Name Person : " + informationPersonOne[1].ToString() + Environment.NewLine  + Environment.NewLine 
+                        + "Address Person : " + informationPersonOne[2].ToString();
+
+
+                    PictureBox picBox = new PictureBox();
+                    picBox.Width = 250;
+                    picBox.Height = 250;
+                    picBox.Left = txtBox.Width + 100;
+                    picBox.Top = TopControlsTxt;
+
+                    string pathImage = "img/" + informationPersonOne[0] + ".jpg";
+                    picBox.SizeMode = PictureBoxSizeMode.StretchImage; 
+                    if(File.Exists(pathImage ))
+                    {
+                        picBox.Image = Image.FromFile(pathImage);
+
+                    }
+                    FrmNew.Controls.Add(txtBox); 
+                    FrmNew.Controls.Add(picBox); 
+
+                }
+
+                TopControlsTxt += 350;
+            } while (line != null);
+            FrmNew.Controls.Add(newLabelInformation);
+            FrmNew.Controls.Add(newLabelImage);
+
+            SR.Close(); 
+
+            FrmNew.ShowDialog();
         }
     }
 }

@@ -44,6 +44,7 @@
             pictureBoxImage = new PictureBox();
             button1 = new Button();
             pictureBoxBack = new PictureBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxImage).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxBack).BeginInit();
             SuspendLayout();
@@ -66,7 +67,7 @@
             textBoxID.Location = new Point(133, 361);
             textBoxID.Multiline = true;
             textBoxID.Name = "textBoxID";
-            textBoxID.Size = new Size(269, 29);
+            textBoxID.Size = new Size(303, 29);
             textBoxID.TabIndex = 1;
             toolTip1.SetToolTip(textBoxID, "This is ID Person");
             // 
@@ -76,7 +77,7 @@
             textBoxName.Location = new Point(133, 430);
             textBoxName.Multiline = true;
             textBoxName.Name = "textBoxName";
-            textBoxName.Size = new Size(269, 29);
+            textBoxName.Size = new Size(303, 29);
             textBoxName.TabIndex = 3;
             toolTip1.SetToolTip(textBoxName, "This is Name Person");
             // 
@@ -99,7 +100,7 @@
             textBoxAddress.Location = new Point(133, 505);
             textBoxAddress.Multiline = true;
             textBoxAddress.Name = "textBoxAddress";
-            textBoxAddress.Size = new Size(269, 29);
+            textBoxAddress.Size = new Size(303, 29);
             textBoxAddress.TabIndex = 5;
             toolTip1.SetToolTip(textBoxAddress, "This is Address Person ");
             // 
@@ -122,7 +123,7 @@
             buttonAdd.FlatStyle = FlatStyle.Popup;
             buttonAdd.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonAdd.ForeColor = Color.White;
-            buttonAdd.Location = new Point(179, 699);
+            buttonAdd.Location = new Point(193, 672);
             buttonAdd.Name = "buttonAdd";
             buttonAdd.Size = new Size(119, 47);
             buttonAdd.TabIndex = 6;
@@ -137,7 +138,7 @@
             btnFind.FlatStyle = FlatStyle.Popup;
             btnFind.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnFind.ForeColor = Color.White;
-            btnFind.Location = new Point(315, 699);
+            btnFind.Location = new Point(329, 672);
             btnFind.Name = "btnFind";
             btnFind.Size = new Size(119, 47);
             btnFind.TabIndex = 6;
@@ -152,7 +153,7 @@
             btnShowAll.FlatStyle = FlatStyle.Popup;
             btnShowAll.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnShowAll.ForeColor = Color.White;
-            btnShowAll.Location = new Point(451, 699);
+            btnShowAll.Location = new Point(465, 672);
             btnShowAll.Name = "btnShowAll";
             btnShowAll.Size = new Size(119, 47);
             btnShowAll.TabIndex = 6;
@@ -170,11 +171,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Modern No. 20", 114.749985F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Modern No. 20", 120F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.RoyalBlue;
-            label2.Location = new Point(12, 80);
+            label2.Location = new Point(12, 96);
             label2.Name = "label2";
-            label2.Size = new Size(840, 157);
+            label2.Size = new Size(876, 164);
             label2.TabIndex = 7;
             label2.Text = "Person Data";
             // 
@@ -183,7 +184,7 @@
             pictureBoxImage.BackColor = Color.Transparent;
             pictureBoxImage.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBoxImage.Image = (Image)resources.GetObject("pictureBoxImage.Image");
-            pictureBoxImage.Location = new Point(439, 308);
+            pictureBoxImage.Location = new Point(467, 308);
             pictureBoxImage.Name = "pictureBoxImage";
             pictureBoxImage.Size = new Size(251, 248);
             pictureBoxImage.SizeMode = PictureBoxSizeMode.Zoom;
@@ -197,7 +198,7 @@
             button1.FlatStyle = FlatStyle.Popup;
             button1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(495, 562);
+            button1.Location = new Point(523, 562);
             button1.Name = "button1";
             button1.Size = new Size(138, 47);
             button1.TabIndex = 6;
@@ -208,13 +209,28 @@
             // pictureBoxBack
             // 
             pictureBoxBack.Image = (Image)resources.GetObject("pictureBoxBack.Image");
-            pictureBoxBack.Location = new Point(96, 699);
+            pictureBoxBack.Location = new Point(110, 672);
             pictureBoxBack.Name = "pictureBoxBack";
             pictureBoxBack.Size = new Size(66, 47);
             pictureBoxBack.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxBack.TabIndex = 9;
             pictureBoxBack.TabStop = false;
             pictureBoxBack.Click += pictureBoxBack_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.RoyalBlue;
+            button2.Cursor = Cursors.Hand;
+            button2.FlatStyle = FlatStyle.Popup;
+            button2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(110, 738);
+            button2.Name = "button2";
+            button2.Size = new Size(474, 47);
+            button2.TabIndex = 6;
+            button2.Text = "Show All IInformation And Image Person";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += btnShowAllImagePerso_Click;
             // 
             // Form1
             // 
@@ -223,11 +239,12 @@
             BackColor = Color.White;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1194, 811);
+            ClientSize = new Size(1256, 834);
             Controls.Add(pictureBoxBack);
             Controls.Add(pictureBoxImage);
             Controls.Add(label2);
             Controls.Add(button1);
+            Controls.Add(button2);
             Controls.Add(btnShowAll);
             Controls.Add(btnFind);
             Controls.Add(buttonAdd);
@@ -268,5 +285,6 @@
         private PictureBox pictureBoxImage;
         private Button button1;
         private PictureBox pictureBoxBack;
+        private Button button2;
     }
 }

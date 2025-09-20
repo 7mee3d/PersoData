@@ -36,7 +36,7 @@ namespace Simple_Project___Person_Data_Desktop
 
             this.Location = new Point(xWidth, yHeight);
 
-            this.Size = new Size(1214, 854);
+            this.Size = new Size(1276, 877);
         }
 
         private void pictureBoxExit_Click(object sender, EventArgs e)

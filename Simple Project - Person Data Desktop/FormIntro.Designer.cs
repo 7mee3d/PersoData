@@ -41,10 +41,10 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Modern No. 20", 144.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Modern No. 20", 150F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(11, 114);
             label1.Name = "label1";
-            label1.Size = new Size(624, 197);
+            label1.Size = new Size(647, 205);
             label1.TabIndex = 0;
             label1.Text = "Person";
             label1.Click += label1_Click;
@@ -55,7 +55,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Modern No. 20", 71.99999F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.Green;
-            label2.Location = new Point(99, 306);
+            label2.Location = new Point(127, 319);
             label2.Name = "label2";
             label2.Size = new Size(234, 98);
             label2.TabIndex = 0;
@@ -66,7 +66,7 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1039, 663);
+            pictureBox1.Location = new Point(1101, 692);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(147, 117);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -78,7 +78,7 @@
             // 
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(38, 663);
+            pictureBox2.Location = new Point(34, 692);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(147, 117);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -92,7 +92,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1198, 815);
+            ClientSize = new Size(1260, 838);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
